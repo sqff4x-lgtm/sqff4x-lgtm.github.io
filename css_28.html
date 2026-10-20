@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Div и span с твоими стилями</title>
+    <style>
+        /* Стили для div (карточки) */
+        .card {
+            border: 1px solid #333;          /* вместо border-width/style/color — короче и правильнее */
+            border-radius: 8px;              /* скругление углов */
+            padding: 20px;                    /* внутренний отступ со всех сторон */
+            padding-left: 40px;              /* отдельный увеличенный отступ слева */
+            background-color: #f5f5f5;       /* чтобы рамку было видно */
+            width: 300px;
+            margin: 20px;
+        }
+
+        /* Стили для span (встроенный элемент внутри div) */
+        .highlight {
+            border: 1px dashed blue;         /* пунктирная рамка */
+            border-radius: 4px;              /* лёгкое скругление */
+            padding: 5px 10px;               /* отступ сверху/снизу 5px, слева/справа 10px */
+            background-color: #e0f7fa;       /* цветной фон для акцента */
+            font-weight: bold;
+        }
+
+        /* Пример с background-image: cover */
+        .bg-cover {
+            height: 200px;
+            width: 300px;
+            border: 2px solid black;
+            border-radius: 12px;
+            /* Картинка заполнит весь блок, края могут обрезаться */
+            background-image: url('https://aif-s3.aif.ru/images/035/005/5d1554f0d06e61800f2c4296885e0488.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Пример с background-image: contain */
+        .bg-contain {
+            height: 500px;
+            width: 500px;
+            border: 2px solid darkred;
+            border-radius: 12px;
+            /* Картинка целиком влезет в блок, могут остаться пустые поля */
+            background-image: url('https://cdn5.vedomosti.ru/image/2026/35/10smw5/original-1boq.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Блок div с твоими свойствами -->
+    <div class="card">
+        <h3>Какие партии ты знаешь,мальчик?</h3>
+        <p>ЛДПР, правильно, других не существет!.</p>
+        
+        <!-- Вложенный span с рамкой и отступами -->
+        <span class="highlight">Айсберг выборы 2026</span>
+    </div>
+
+    <!-- Блоки с фоновыми картинками: cover vs contain -->
+    <p><strong>ПОМОЛЧАТЬ!!! Кто там что-то говорил, бессовестно сидишь здесь, фигуристка:</strong></p>
+    
+    <div style="display: flex; gap: 20px;">
+        <div class="bg-cover"></div>
+        <div class="bg-contain"></div>
+    </div>
+
+</body>
+</html>
